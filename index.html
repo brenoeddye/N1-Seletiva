@@ -10,7 +10,16 @@
 </head>
 <body>
     <div id="app">
-        <div class="bg"></div>
+        <div id="carousel-img" class="bg">
+        </div>
+        <div class="d-flex selector">
+            <h3 id="select-name">Mortal Kombat</h3>
+            <div class="_vbar"></div>
+            <div class="changeBG">
+                <p id="select-id">1/2</p>
+                <button class="btn-transparent" onclick="changeCarousel(0)"><</button> <button class="btn-transparent" onclick="changeCarousel(1)">></button>
+            </div>
+        </div>
         <div class="header">
             <div class="d-flex container navbar">
                 <div>
@@ -52,13 +61,22 @@
                     </div>
                 </div>
             </div>
-            <div class="container h_desc">
+            <div id="carousel-bg" class="container h_desc">
                 <h1>MORTAL KOMBAT</h1>
                 <div class="price">
                     <h1>R$ 299</h1><h7>,99</h7>
                 </div>
                 <p>
                     Mortal Kombat X combina uma apresentação cinemática única com uma jogabilidade totalmente nova. Os jogadores podem escolher pela primeira vez diversas variantes de cada personagem, afetando tanto a estratégia como o estilo de luta.
+                </p>
+            </div>
+            <div id="carousel-bg2" class="container h_desc d-none">
+                <h1>CYBERPUNK 2077</h1>
+                <div class="price">
+                    <h1>R$ 200</h1><h7>,00</h7>
+                </div>
+                <p>
+                    Cyberpunk 2077 é uma história de ação e aventura de mundo aberto ambientada em Night City, uma megalópole obcecada por poder, glamour e biomodificações. Você joga como V, um mercenário fora da lei atrás de um implante único que carrega a chave da imortalidade.
                 </p>
             </div>
         </div>
@@ -136,5 +154,17 @@
 <script>
 function openMenu() {
     document.getElementById("dropdown").classList.toggle("off");
+}
+
+function changeCarousel(e) {
+    if(e == 0) {
+        document.getElementById('carousel-img').classList.toggle('bg2');
+        document.getElementById('carousel-bg2').classList.toggle('d-none');
+        document.getElementById('carousel-bg').classList.toggle('d-none');
+    } else if(e == 1) {
+        document.getElementById('carousel-img').classList.toggle('bg2');
+        document.getElementById('carousel-bg2').classList.toggle('d-none');
+        document.getElementById('carousel-bg').classList.toggle('d-none');
+    }
 }
 </script>
