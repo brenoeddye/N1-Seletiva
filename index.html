@@ -152,6 +152,8 @@
 </html>
 
 <script>
+let bg = 1;
+
 function openMenu() {
     document.getElementById("dropdown").classList.toggle("off");
 }
@@ -161,10 +163,24 @@ function changeCarousel(e) {
         document.getElementById('carousel-img').classList.toggle('bg2');
         document.getElementById('carousel-bg2').classList.toggle('d-none');
         document.getElementById('carousel-bg').classList.toggle('d-none');
+        bg--;
+        if(bg == 0)
+            bg = 2;
+        document.getElementById('select-id').innerHTML = bg + "/2";
+        if(bg == 1)
+            document.getElementById('select-name').innerHTML = "MORTAL KOMBAT";
+        else document.getElementById('select-name').innerHTML = "CYBERPUNK 2077";
     } else if(e == 1) {
         document.getElementById('carousel-img').classList.toggle('bg2');
         document.getElementById('carousel-bg2').classList.toggle('d-none');
         document.getElementById('carousel-bg').classList.toggle('d-none');
+        bg++;
+        if(bg == 3)
+            bg = 1;
+        document.getElementById('select-id').innerHTML = bg + "/2";
+        if(bg == 1)
+            document.getElementById('select-name').innerHTML = "MORTAL KOMBAT";
+        else document.getElementById('select-name').innerHTML = "CYBERPUNK 2077";
     }
 }
 </script>
