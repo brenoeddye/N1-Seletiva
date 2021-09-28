@@ -110,7 +110,7 @@
                             <h4>Outriders - PS4</h4>
                             <h3>R$ 200,00</h3>
                         </div>
-                        <button class="btn btn-buy">Comprar</button>
+                        <button class="btn btn-buy" onclick="buyItem()">Comprar</button>
                     </div>
                 </div>
                 <div class="d-flex fd-column product">
@@ -122,7 +122,7 @@
                             <h4>CYBERPUNK 2077 - PS4</h4>
                             <h3>R$ 200,00</h3>
                         </div>
-                        <button class="btn btn-buy">Comprar</button>
+                        <button class="btn btn-buy" onclick="buyItem()">Comprar</button>
                     </div>
                 </div>
                 <div class="d-flex fd-column product">
@@ -135,7 +135,7 @@
                                 Freeze - Switch</h4>
                             <h3>R$ 200,00</h3>
                         </div>
-                        <button class="btn btn-buy">Comprar</button>
+                        <button class="btn btn-buy" onclick="buyItem()">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -153,6 +153,7 @@
 
 <script>
 let bg = 1;
+let clicked = 0;
 
 function openMenu() {
     document.getElementById("dropdown").classList.toggle("off");
@@ -181,6 +182,18 @@ function changeCarousel(e) {
         if(bg == 1)
             document.getElementById('select-name').innerHTML = "MORTAL KOMBAT";
         else document.getElementById('select-name').innerHTML = "CYBERPUNK 2077";
+    }
+}
+
+function buyItem(e) {
+    let btn = document.getElementsByClassName('btn-buy');
+    if(clicked == 0) {
+        btn[e.target.btn].innerHTML = 'Comprado!';
+        clicked = 1;
+    }
+    else {
+        btn[e.target.btn].innerHTML = 'Comprado!';
+        clicked = 0;
     }
 }
 </script>

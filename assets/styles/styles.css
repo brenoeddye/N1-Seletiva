@@ -315,10 +315,31 @@ body {
 
 .btn-buy {
     background-color: #3EC6E0;
+    position: relative;
+}
+
+.btn-buy::before {
+    content: '';
+    position: absolute;
+    background: url('../img/little-mario.png') no-repeat;
+    width: 68px;
+    height: 0px;
+    right: 0;
+    bottom: 0;
+    transition: all .3s ease-in-out;
 }
 
 .btn-buy:hover {
     background-color: #69d8ee;
+}
+
+.btn-buy:focus {
+    background-color: #084154;
+    padding: 1rem 6.5rem 1rem 1rem;
+}
+
+.btn-buy:focus::before {
+    height: 79px;
 }
 
 .btn-menu {
